@@ -30,6 +30,6 @@ body {
 }
 
 .food {
-    background: hsl(200, 50%, 50%);
+    background: hsl(50, 100%, 50%);
     border: .25vmin solid black;
 }
