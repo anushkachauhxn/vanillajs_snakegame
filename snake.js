@@ -5,6 +5,8 @@ const snakeBody = [{ x: 11, y: 11 }]; // snake body is represented from 21x21 gr
 let newSegments = 0;
 
 export function update() {
+    addSegments();
+
     // iterate over snake elements starting from second last element (length - 2); 
     // since last element (length - 1) is going to disappear after update
     for (let i = snakeBody.length - 2; i >= 0; i--) {
@@ -38,4 +40,12 @@ export function onSnake(position) {
 
 function equalPositions(pos1, pos2) {
     return pos1.x === pos2.x && pos1.y === pos2.y;
+}
+
+function addSegments() {
+    // take last element of the snake and duplicate it 'newSegments' times
+    for (let i = 0; i < newSegments; i++) {
+        snakeBody.push({ ...snakeBody[snakeBody.length - 1] });
+    }
+    newSegments = 0;
 }
