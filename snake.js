@@ -2,6 +2,7 @@ import { getInputDirection } from "./input.js";
 
 export const SNAKE_SPEED = 2; // how many times the snake moves in one second
 const snakeBody = [{ x: 11, y: 11 }]; // snake body is represented from 21x21 grid in game-board
+let newSegments = 0;
 
 export function update() {
     // iterate over snake elements starting from second last element (length - 2); 
@@ -25,4 +26,16 @@ export function draw(gameBoard) {
 
         gameBoard.appendChild(snakeElement);
     });
+}
+
+export function expandSnake(amount) {
+    newSegments += amount;
+}
+
+export function onSnake(position) {
+    return snakeBody.some(segment => equalPositions(segment, position));
+}
+
+function equalPositions(pos1, pos2) {
+    return pos1.x === pos2.x && pos1.y === pos2.y;
 }
