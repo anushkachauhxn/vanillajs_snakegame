@@ -34,7 +34,7 @@ body {
     border: .25vmin solid black;
 }
 
-#score {
+#score-board {
     position: absolute;
     top: 5px;
     left: 40px;

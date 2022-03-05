@@ -1,8 +1,10 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './components/snake.js';
 import { update as updateFood, draw as drawFood } from './components/food.js';
+import { draw as drawScore } from './components/score.js';
 import { outsideGrid } from './components/grid.js';
 
 const gameBoard = document.getElementById("game-board");
+const scoreBoard = document.getElementById("score-board");
 let lastRenderTime = 0;
 let gameOver = false;
 
@@ -36,6 +38,7 @@ function draw() {
     gameBoard.innerHTML = "";
     drawSnake(gameBoard);
     drawFood(gameBoard);
+    drawScore(scoreBoard);
 }
 
 function checkDeath() {

@@ -1,11 +1,13 @@
 import { onSnake, expandSnake } from "./snake.js";
 import { randomGridPosition } from "./grid.js";
+import { update as updateScore } from './score.js';
 
 let food = getRandomFoodPosition();
-const EXPANSION_RATE = 1; // how much snake grows each time it eats a food
+export const EXPANSION_RATE = 2; // how much snake grows each time it eats a food
 
 export function update() {
     if (onSnake(food)) {
+        updateScore();
         expandSnake(EXPANSION_RATE);
         food = getRandomFoodPosition();
     }
