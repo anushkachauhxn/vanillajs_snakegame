@@ -5,11 +5,13 @@ import { outsideGrid } from './components/grid.js';
 
 const gameBoard = document.getElementById("game-board");
 const scoreBoard = document.getElementById("score-board");
+const gameOverSound = new Audio("../assets/game-over.wav");
 let lastRenderTime = 0;
 let gameOver = false;
 
 function main(currentTime) {
     if (gameOver) {
+        gameOverSound.play();
         if (confirm("You lost! Press OK to restart.")) {
             window.location = '/';
         }
