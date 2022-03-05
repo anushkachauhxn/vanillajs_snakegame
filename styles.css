@@ -33,3 +33,12 @@ body {
     background: hsl(50, 100%, 50%);
     border: .25vmin solid black;
 }
+
+#score {
+    position: absolute;
+    top: 5px;
+    left: 40px;
+    font-family: consolas;
+    font-size: 64px;
+    color: white;
+}
