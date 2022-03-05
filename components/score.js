@@ -7,5 +7,5 @@ export function update() {
 }
 
 export function draw(scoreBoard) {
-    scoreBoard.innerHTML = score;
+    scoreBoard.innerHTML = score.toLocaleString(undefined, { minimumIntegerDigits: 2 });
 }
