@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: consolas;
 }
 
 body {
@@ -38,7 +39,7 @@ body {
     position: absolute;
     top: 5px;
     left: 40px;
-    font-family: consolas;
     font-size: 64px;
     color: white;
+    user-select: none;
 }
